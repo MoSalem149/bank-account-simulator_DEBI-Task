@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank Account Simulator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Bank Account Simulator</h1>
+    </header>
+
+    <div class="container">
+      <div class="form-container">
+        <h2>Create Account</h2>
+        <form id="create-account-form">
+          <div class="form-group">
+            <label for="account-type">Account Type:</label>
+            <select id="account-type">
+              <option value="savings">Savings</option>
+              <option value="checking">Checking</option>
+              <option value="business">Business</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="owner">Owner:</label>
+            <input
+              type="text"
+              id="owner"
+              placeholder="Enter owner's name"
+              required
+            />
+            <div id="owner-error" class="error-message"></div>
+          </div>
+          <div class="form-group">
+            <label for="currency">Currency:</label>
+            <select id="currency">
+              <option value="EGP">EGP</option>
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="GBP">GBP</option>
+              <option value="JPY">JPY</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="pin">PIN:</label>
+            <input
+              type="text"
+              id="pin"
+              placeholder="Enter 4-digit PIN"
+              required
+              pattern="\d{4}"
+            />
+            <div id="pin-error" class="error-message"></div>
+          </div>
+          <div class="form-group">
+            <label for="interest-rate">Interest Rate (%):</label>
+            <input
+              type="text"
+              id="interest-rate"
+              placeholder="Enter interest rate as a number"
+            />
+            <div id="interest-rate-error" class="error-message"></div>
+          </div>
+          <div class="form-group">
+            <label for="withdrawal-limit">Withdrawal Limit:</label>
+            <input
+              type="text"
+              id="withdrawal-limit"
+              placeholder="Enter withdrawal limit"
+            />
+            <div id="withdrawal-limit-error" class="error-message"></div>
+          </div>
+          <div class="form-group">
+            <label for="overdraft-limit">Overdraft Limit:</label>
+            <input
+              type="text"
+              id="overdraft-limit"
+              placeholder="Enter overdraft limit"
+            />
+            <div id="overdraft-limit-error" class="error-message"></div>
+          </div>
+          <div class="form-group">
+            <label for="overdraft-fee">Overdraft Fee:</label>
+            <input
+              type="text"
+              id="overdraft-fee"
+              placeholder="Enter overdraft fee"
+            />
+            <div id="overdraft-fee-error" class="error-message"></div>
+          </div>
+          <button type="button" onclick="createAccount()">
+            Create Account
+          </button>
+        </form>
+      </div>
+
+      <div class="actions-container">
+        <h2>Account Actions</h2>
+        <form id="account-actions-form">
+          <div class="form-group">
+            <label for="action">Action:</label>
+            <select id="action">
+              <option value="deposit">Deposit</option>
+              <option value="withdraw">Withdraw</option>
+              <option value="request-loan">Request Loan</option>
+              <option value="calculate-interest">Calculate Interest</option>
+              <option value="process-large-transaction">
+                Process Large Transaction
+              </option>
+              <option value="generate-report">Generate Report</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="amount">Amount:</label>
+            <input type="text" id="amount" placeholder="Enter amount" />
+            <div id="amount-error" class="error-message"></div>
+          </div>
+          <div class="form-group">
+            <label for="pin-action">PIN (for withdrawal/loan):</label>
+            <input
+              type="text"
+              id="pin-action"
+              placeholder="Enter PIN for action"
+              pattern="\d{4}"
+            />
+            <div id="pin-action-error" class="error-message"></div>
+          </div>
+          <button type="button" onclick="performAction()">
+            Perform Action
+          </button>
+        </form>
+        <!-- Console output moved here -->
+        <div class="console-output" id="console-output"></div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Bank Simulator. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
