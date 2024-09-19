@@ -65,4 +65,4 @@ Below are some screenshots showing different stages of the website:
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/MoSalem149v2/bank-account-simulator_DEBI-Task.git
+   git clone https://github.com/MoSalem149/bank-account-simulator_DEBI-Task.git
